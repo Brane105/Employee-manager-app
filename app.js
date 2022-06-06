@@ -36,3 +36,21 @@ app.get("/profile/:username/:password", (request, response) => {
         }
     });
 });
+app.get("/profile/emp",(req,res)=>{
+    mongoClient.connect(dbURL,{useNewUrlParser:true},(error,client) =>{
+        if(error)
+        throw error;
+        let db = client.db("profile");
+        let cursor = db.collection("emp").find();
+        let employee = [];
+        cursor.forEach((doc,err) => {
+            if(err)
+                throw err;
+            employee.push(doc);
+        },() =>{
+            res.json(employee);
+            client.close();
+        });
+    });
+    
+});
