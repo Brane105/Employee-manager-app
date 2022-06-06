@@ -20,5 +20,4 @@ export class DashboardComponent implements OnInit {
       console.table(this.emps)
     });
   }
-
 }
