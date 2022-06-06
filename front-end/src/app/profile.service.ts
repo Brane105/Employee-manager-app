@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Emp } from './dashboard/emp';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,4 +13,9 @@ export class ProfileService {
    let url = `${this.baseURL}/${username}/${password}`;
    return this._http.get(url);
   }
+  //login 
+  public getEmp(): Observable<Emp[]> {
+    let url = `${this.baseURL}/emp`;
+    return this._http.get<Emp[]>(url);
+   }
 }

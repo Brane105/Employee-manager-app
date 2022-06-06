@@ -1,1 +1,30 @@
 <p>dashboard works!</p>
+<div>
+    {{emps| json}}
+</div>
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <th>EmpId</th>
+            <th>EmpName</th>
+            <th>EmpDept</th>
+            <th>Email</th>
+            <th>Level</th>
+        </tr>
+    </thead>
+    <tbody *ngIf="emps" >
+        <tr *ngFor="let emps of emps" >
+            <td>{{emps.empid}}</td>
+            <td>{{emps.empname}}</td>
+            <td>{{emps.dept}}</td>
+            <td>{{emps.email}}</td>
+            <td>{{emps.level}}</td>
+        </tr>
+    </tbody>
+</table>
+<!-- _id": "629dc78dc88b3aa8a899efff",
+    "empid": 1,
+    "empname": "ALex",
+    "dept": "IT",
+    "email": "alex@gmail.com",
+    "level": "Manager" -->
