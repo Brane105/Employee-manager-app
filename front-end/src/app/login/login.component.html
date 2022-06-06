@@ -1,0 +1,12 @@
+<div class="form-control text-center">
+    <p>login works!</p>
+    <form action=""  [formGroup]="loginForm" (ngSubmit)="handleSubmit()" >
+    <label for="user">Username
+    <input type="text" formControlName = "user" required>
+    </label>
+    <label for="password">Password
+    <input type="password" formControlName = "password" required>
+    </label>
+    <button class="btn btn-success">Log in</button>
+    </form>
+</div>
