@@ -1,12 +1,42 @@
-<div class="form-control text-center">
+<!-- <div class="form-control text-center">
     <p>login works!</p>
-    <form action=""  [formGroup]="loginForm" (ngSubmit)="handleSubmit()" >
-    <label for="user">Username
-    <input type="text" formControlName = "user" required>
-    </label>
-    <label for="password">Password
-    <input type="password" formControlName = "password" required>
-    </label>
-    <button class="btn btn-success">Log in</button>
+    <form action="" [formGroup]="loginForm" (ngSubmit)="handleSubmit()">
+        <label for="user">Username
+            <input type="text" formControlName="user" required>
+        </label>
+        <label for="password">Password
+            <input type="password" formControlName="password" required>
+        </label>
+        <button class="btn btn-success">Log in</button>
     </form>
+</div> -->
+<div class="bg-container">
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+        <h2 class="active"> Sign In </h2>
+
+
+
+
+        <!-- Login Form -->
+        <form action="" [formGroup]="loginForm" (ngSubmit)="handleSubmit()">
+            <label for="user">
+                <input type="text" id="login" class="fadeIn second" name="login" placeholder="login"
+                    formControlName="user" required>
+            </label>
+            <label for="password"> 
+                <input type="password" id="password" class="fadeIn third" name="login" placeholder="password"
+                    formControlName="password" required>
+            </label>
+            <input type="submit" class="fadeIn fourth" value="Log In">
+        </form>
+
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+            <a class="underlineHover" href="#"></a>
+        </div>
+
+    </div>
+</div>
 </div>
