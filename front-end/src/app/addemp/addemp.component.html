@@ -1,0 +1,18 @@
+<div class="container">
+<form action="" class="form-control" (ngSubmit) = "addContact(empForm.value)" #empForm = "ngForm">
+    <div class = "form-group">
+        <input type = "number" name = "empid" [(ngModel)] = "empid" matInput placeholder="Empid"><br>
+        <input type = "text" name = "empname" [(ngModel)] = "empname" matInput placeholder="empname"><br>
+        <input type = "text" name = "email" [(ngModel)] = "email" matInput placeholder="email"><br>
+        <input type = "text" name = "dept" [(ngModel)] = "dept" matInput placeholder="dept"><br>
+        <input type = "text" name = "level" [(ngModel)] = "level" matInput placeholder="level"><br>
+    </div>
+    <button class="btn btn-success" onClick="window.location.reload();">Save</button>
+</form>
+</div>
+<app-getemp></app-getemp>
+<!--empid:number | undefined;
+  empname:string | undefined;
+  email:string | undefined;
+  dept:string | undefined;
+  level:string | undefined;-->
