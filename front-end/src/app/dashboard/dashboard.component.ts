@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProfileService } from '../profile.service';
 import { ActivatedRoute,Params } from '@angular/router';
 import { Emp } from './emp';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -11,7 +11,7 @@ import { Emp } from './emp';
 export class DashboardComponent implements OnInit {
 
   emps? : Array<Emp>
-  constructor(public service : ProfileService,private activatedRouter:ActivatedRoute) {
+  constructor(public service : ProfileService,private activatedRouter:ActivatedRoute,public router:Router) {
    
    }
   ngOnInit(): void {
@@ -26,4 +26,7 @@ export class DashboardComponent implements OnInit {
       this.ngOnInit();
     });
    }
+   logout(): void{
+    this.router.navigate(['']);
+  }
 }
