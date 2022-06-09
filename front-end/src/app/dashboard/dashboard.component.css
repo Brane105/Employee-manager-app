@@ -1,0 +1,9 @@
+.flex-container {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    background-color:#fffff9;
+    color:blueviolet;
+    padding: 2%;
+    margin: 2%;
+    border: 1px solid black;
+}

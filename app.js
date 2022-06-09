@@ -13,44 +13,44 @@ app.listen(PORT, () => console.log(`Server is running in ${PORT}`));
 app.use(cors());
 app.use(bodyParser.json());
 
-//create the services for contact app
+//create the services for app
 //storing the profile 
 //login service
-app.get("/profile/:username/:password", (request, response) => { 
+app.get("/profile/:username/:password", (request, response) => {
     let user = request.params.username
     let pass = request.params.password;
-    mongoClient.connect(dbURL, {useNewUrlParser:true}, (error, client) => {
-        if(error) {
+    mongoClient.connect(dbURL, { useNewUrlParser: true }, (error, client) => {
+        if (error) {
             throw error;
         } else {
             let db = client.db("profile");
-            db.collection("admin").findOne({username:user, password: pass})
-            .then((doc) => {
-                if(doc.length != 0) {
-                    response.json(doc)
-                } else {
-                    response.status(404).json({"message":`Sorry username or password is wrong`})
-                }
-                client.close();
-            });
+            db.collection("admin").findOne({ username: user, password: pass })
+                .then((doc) => {
+                    if (doc.length != 0) {
+                        response.json(doc)
+                    } else {
+                        response.status(404).json({ "message": `Sorry username or password is wrong` })
+                    }
+                    client.close();
+                });
         }
     });
 });
-app.get("/profile/emp",(req,res)=>{
-    mongoClient.connect(dbURL,{useNewUrlParser:true},(error,client) =>{
-        if(error)
-        throw error;
+app.get("/profile/emp", (req, res) => {
+    mongoClient.connect(dbURL, { useNewUrlParser: true }, (error, client) => {
+        if (error)
+            throw error;
         let db = client.db("profile");
         let cursor = db.collection("emp").find();
         let employee = [];
-        cursor.forEach((doc,err) => {
-            if(err)
+        cursor.forEach((doc, err) => {
+            if (err)
                 throw err;
             employee.push(doc);
-        },() =>{
+        }, () => {
             res.json(employee);
             client.close();
         });
     });
-    
+
 });

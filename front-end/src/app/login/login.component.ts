@@ -9,6 +9,8 @@ import { Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  public showPassword: boolean = false;
+  
 
   errorMessage:any
   constructor(private _builder:FormBuilder,private _service: ProfileService,private _router : Router) { }
@@ -16,8 +18,14 @@ export class LoginComponent implements OnInit {
   loginForm : FormGroup = this._builder.group({
     user : ['',Validators.required], password : ['',Validators.required]
   })
+
   ngOnInit(): void {
   }
+
+  public togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
+  }
+  
  handleSubmit(){
     let username = this.loginForm.controls['user'].value;
     let password = this.loginForm.controls['password'].value;
@@ -32,4 +40,23 @@ export class LoginComponent implements OnInit {
       }
     })
   }
+
 }
+
+//checkbox for show password
+// export class password implements OnInit {
+//   public inputType:string ='password';
+
+//   public showPassword(event:any):void{
+//     if(event.target.checked){
+//       this.inputType='text';
+//     } else{
+//       this.inputType ='password'
+//     }
+
+//   }
+
+
+//   ngOnInit(): void {}
+
+// }
