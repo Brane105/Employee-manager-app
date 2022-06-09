@@ -1,0 +1,27 @@
+<div class="flex-container">
+    <h3>Dashboard</h3>
+    <br>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>EmpId</th>
+                <th>EmpName</th>
+                <th>EmpDept</th>
+                <th>Email</th>
+                <th>Level</th>
+                <th>delete</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="emps">
+            <tr *ngFor="let emps of emps">
+                <td>{{emps.empid}}</td>
+                <td>{{emps.empname}}</td>
+                <td>{{emps.dept}}</td>
+                <td>{{emps.email}}</td>
+                <td>{{emps.level}}</td>
+                <td><button (click)="deleteEmp(emps.empid)" class="btn btn-danger">delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+</div>

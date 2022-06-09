@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <h2 class="alert alert-warning">Update Player</h2>
+<div  style="width: fit-content;margin-left: 50px;">
+    <div class="form-group" >
+        <label for="id" >Id</label>
+        <input class="form-control" type="number" [formControl]="id" placeholder="Enter here">
+    </div><br>
+    <div class="form-group" >
+        <label for="id" >dept:</label>
+        <input class="form-control" type="text" [formControl]="dept" placeholder="Enter here">
+    </div><br>
+    <div class="btn btn-success">
+        <input type="submit" value="Update" (click)="handleUpdate()" class="btn btn-primary" onClick="window.location.reload();" >
+    </div>
+</div>
+<div>
+    <p *ngIf="users">{{users | json}}</p>
+</div>
+</div>
+<app-getemp></app-getemp>

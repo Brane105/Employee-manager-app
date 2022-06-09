@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from '../profile.service';
 import { ActivatedRoute,Params } from '@angular/router';
-import { Emp } from './emp';
-import { Router } from '@angular/router';
+import { Emp } from '../dashboard/emp';
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-getemp',
+  templateUrl: './getemp.component.html',
+  styleUrls: ['./getemp.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class GetempComponent implements OnInit {
 
   emps? : Array<Emp>
-  constructor(public service : ProfileService,private activatedRouter:ActivatedRoute,public router:Router) {
+  constructor(public service : ProfileService,private activatedRouter:ActivatedRoute) {
    
    }
   ngOnInit(): void {
@@ -26,7 +25,4 @@ export class DashboardComponent implements OnInit {
       this.ngOnInit();
     });
    }
-   logout(): void{
-    this.router.navigate(['']);
-  }
 }

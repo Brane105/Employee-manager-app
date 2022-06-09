@@ -31,7 +31,8 @@ export class LoginComponent implements OnInit {
     let password = this.loginForm.controls['password'].value;
     this._service.login(username,password).subscribe({
       next:(data)=>{
-        this._router.navigate(['success',data.username])
+        console.log(data)
+        this._router.navigate(['success',username])
       },
       error:(err)=>{
         this.errorMessage = err.error.messsage
